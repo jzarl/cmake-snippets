@@ -1,8 +1,8 @@
 # - GIT_GET_DESCRIPTION ( description_variable [GIT_ARGS arg1 ...] [SEND_ERROR] )
 # This macro calls git describe to obtain a concise description of the current
-# git repository, i.e. the most recent tag, together with thea "distance" to 
+# git repository, i.e. the most recent tag, together with thea "distance" to
 # that tag and the short hash of the current commit.
-# 
+#
 # The description will be written into 'description_variable'. If an error
 # occurred, the variable will be set to '-NOTFOUND' unless SEND_ERROR is set.
 # In this case the a SEND_ERROR will be issued and generation will be skipped.
@@ -34,10 +34,6 @@
 # CMakeParseArguments is included since cmake 2.8.3
 include ( CMakeParseArguments )
 
-## git_get_description ( <DESCRIPTION_VARIABLE> [GIT_ARGS <arg1>..<argN>] [SEND_ERROR] )
-# Write the result of "git describe" into the variable DESCRIPTION_VARIABLE.
-# Additional arguments to git describe ( e.g. --dirty ) can be passed using the keyword GIT_ARGS.
-# If SEND_ERROR is set, execution is immediately stopped when an error occurs.
 function ( git_get_description DESCVAR )
 	cmake_parse_arguments ( _GGD "SEND_ERROR" "GIT_ARGS" "" "${ARGN}" )
 	if ( SEND_ERROR )
@@ -67,4 +63,3 @@ function ( git_get_description DESCVAR )
 		set ( ${DESCVAR} "${_gitdesc}" PARENT_SCOPE )
 	endif()
 endfunction()
-
