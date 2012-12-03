@@ -1,6 +1,6 @@
 # - GIT_GET_DESCRIPTION ( description_variable [GIT_ARGS arg1 ...] [SEND_ERROR] )
 # This macro calls git describe to obtain a concise description of the current
-# git repository, i.e. the most recent tag, together with thea "distance" to
+# git repository, i.e. the most recent tag, together with the "distance" to
 # that tag and the short hash of the current commit.
 #
 # The description will be written into 'description_variable'. If an error
